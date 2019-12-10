@@ -6,4 +6,5 @@
     <color name="appBackGround">#eeeeee</color>
     <color name="viewColor">#0363F4</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>
