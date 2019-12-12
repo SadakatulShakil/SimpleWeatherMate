@@ -229,6 +229,10 @@ public class MainActivity extends AppCompatActivity {
             iconView.setImageResource(R.drawable._021_winter);
         }
 
+        else if(weatherStatus.equals("mist")){
+            iconView.setImageResource(R.drawable._021_winter);
+        }
+
 
     }
 

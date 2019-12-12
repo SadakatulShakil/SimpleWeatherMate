@@ -92,6 +92,9 @@ public class ForecasterAdapter extends RecyclerView.Adapter<ForecasterAdapter.fo
         else if(descriptionIcon.equals("haze")){
             holder.imageView.setImageResource(R.drawable._021_winter);
         }
+        else if(descriptionIcon.equals("mist")){
+            holder.imageView.setImageResource(R.drawable._021_winter);
+        }
     }
 
     @Override
