@@ -1,126 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cardOne"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="2dp"
-    android:background="@color/appBackGround"
-    android:orientation="vertical"
-    android:padding="5dp"
-    app:cardCornerRadius="8dp"
-    app:elevation="8dp">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardOne"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:background="@color/appBackGround"
+        android:orientation="vertical"
         android:padding="5dp"
-        android:weightSum="3">
+        android:layout_margin="4dp"
+        app:cardCornerRadius="8dp"
+        app:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight=".75"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:weightSum="3">
 
-            <ImageView
-                android:id="@+id/rvWeatherIV"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/sun" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/rvTimeTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Time"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/colorPrimaryDark" />
+                <ImageView
+                    android:id="@+id/rvWeatherIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/sun" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/rvTimeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Time"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/rvDayTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:text="Day"
-                android:textColor="@color/black" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/rvDateTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date"
-                android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/rvDayTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Day"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/rvDateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.25"
+                android:gravity="center_vertical">
+
+                <TableRow android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/rvMaxTempTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Max Temp"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/rvMinTempTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Min Temp"
+                        android:textColor="@color/colorPrimary" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_gravity="center_vertical"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="High"
+                        android:textColor="@color/black" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Low"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+
+            </TableLayout>
+
         </LinearLayout>
 
-        <TableLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.25"
-            android:gravity="center_vertical">
+    </androidx.cardview.widget.CardView>
 
-            <TableRow android:layout_gravity="center">
-
-                <TextView
-                    android:id="@+id/rvMaxTempTV"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Max Temp"
-                    android:textColor="@color/colorPrimary" />
-
-                <TextView
-                    android:id="@+id/rvMinTempTV"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Max Temp"
-                    android:textColor="@color/colorPrimary" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_gravity="center_vertical"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Low"
-                    android:textColor="@color/black" />
-
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="High"
-                    android:textColor="@color/black" />
-
-            </TableRow>
-
-        </TableLayout>
-
-
-    </LinearLayout>
-
-
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
