@@ -1,6 +1,7 @@
 package com.futuresky.simpleweathermate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,7 +12,9 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private String latitude, longtitude;
     private RecyclerView recyclerView;
     private ForecasterAdapter adapter;
+    private ProgressBar progressBar;
+    private ConstraintLayout mainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,6 +186,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<WeatherResponse> call, Response<WeatherResponse> response) {
 
                 if (response.code() == 200) {
+                    progressBar.setVisibility(View.GONE);
+                    mainLayout.setVisibility(View.VISIBLE);
                     WeatherResponse wr = response.body();
                     String description = wr.getWeather().get(0).getDescription();
                     cityTV.setText(wr.getName());
@@ -249,6 +256,8 @@ public class MainActivity extends AppCompatActivity {
         statusTV = findViewById(R.id.situationTv);
         iconView = findViewById(R.id.sun);
         recyclerView = findViewById(R.id.recycleViewOfForecaster);
+        progressBar = findViewById(R.id.progressBar);
+        mainLayout = findViewById(R.id.mainLayout);
     }
 
 }

@@ -5,8 +5,10 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashScreenActivity extends AppCompatActivity {
+import pl.droidsonroids.gif.GifImageView;
 
+public class SplashScreenActivity extends AppCompatActivity {
+    private GifImageView splashView;
     public static final String TAG = "splash";
 
     @Override
@@ -15,6 +17,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         ///for .glf splash screen///
+        splashView = findViewById(R.id.splashView);
         runSplash();
     }
 
